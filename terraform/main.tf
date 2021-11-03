@@ -68,9 +68,11 @@ resource "azurerm_storage_account" "MainStorageAccount" {
     account_replication_type    = "LRS"
 }
 
-resource "tls_private_key" "SSHKey" {
-  algorithm = "RSA"
-  rsa_bits = 4096
+resource "azurerm_ssh_public_key" "SSHKey" {
+  name                = "SSHKey"
+  resource_group_name = azurerm_resource_group.LOG8415.name
+  location            = azurerm_resource_group.LOG8415.location
+  public_key          = file(var.SSHPubKey)
 }
 
 resource "azurerm_linux_virtual_machine" "MainVM" {
@@ -99,7 +101,7 @@ resource "azurerm_linux_virtual_machine" "MainVM" {
 
     admin_ssh_key {
         username       = "azureuser"
-        public_key     = tls_private_key.SSHKey.public_key_openssh
+        public_key     = azurerm_ssh_public_key.SSHKey.public_key
     }
 
     boot_diagnostics {
