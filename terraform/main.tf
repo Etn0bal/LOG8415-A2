@@ -61,7 +61,7 @@ resource "azurerm_network_interface_security_group_association" "NetworkInterfac
 }
 
 resource "azurerm_storage_account" "MainStorageAccount" {
-    name                        = "storageaccount"
+    name                        = "log8415storageaccount"
     resource_group_name         = azurerm_resource_group.LOG8415.name
     location                    = azurerm_resource_group.LOG8415.location
     account_tier                = "Standard"
