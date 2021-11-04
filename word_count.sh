@@ -1,3 +1,3 @@
-cat ./dataset/pg4300.txt | tr " " "
+cat ./dataset/$1 | tr " " "
 " | sort | uniq -c 
 
