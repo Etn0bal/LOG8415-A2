@@ -1,4 +1,5 @@
 import java.io.IOException;
+
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.*;
@@ -8,80 +9,79 @@ import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
+
+import java.sql.Array;
 import java.util.*;
+import java.util.stream.Collectors;
+
 public class Top10MutualFriends {
-    public static class Map
-            extends Mapper<LongWritable, Text, Text, Text>{
+    public static class MapClass extends Mapper<LongWritable, Text, Text, Text> {
         Text user = new Text();
         Text friends = new Text();
 
         public void map(LongWritable key, Text value, Context context)
-                throws IOException, InterruptedException{
-            /*Splitting each line into user and corresponding friend list*/
-            String[] split=value.toString().split("\\t");
-            /*split[0] is user and split[1] is friend list */
-            String userId=split[0];
-            if(split.length==1) {
+                throws IOException, InterruptedException {
+            // Splitting each line into user and corresponding friend list
+            String[] split = value.toString().split("\\t");
+            // split[0] is user and split[1] is friend list
+            String userId = split[0];
+            user.set(userId);
+            if (split.length == 1) {
+                friends.set("-1");
+                context.write(user, friends);
                 return;
+            } else {
+                friends.set(split[1] + "-1");
+                context.write(user, friends);
             }
-            String[] friendIds=split[1].split(",");
-            for(String friend : friendIds) {
-                if(userId.equals(friend)) {
-                    continue;
-                }
-                String userKey = (Integer.parseInt(userId) < Integer.parseInt(friend))?userId + "," +friend : friend + ","+ userId;
-                String regex="((\\b"+ friend + "[^\\w]+)|\\b,?" + friend + "$)";
-                friends.set(split[1].replaceAll(regex, ""));
-                user.set(userKey);
-                context.write(user,friends);
+
+            String[] friendIds = split[1].split(",");
+            for (String friend : friendIds) {
+                String commonFriends = Arrays.stream(friendIds).filter(f -> !f.equals(friend)).collect(Collectors.joining(","));
+                friends.set(commonFriends + "-0");
+                user.set(friend);
+                context.write(user, friends);
             }
         }
     }
 
     public static class Reduce
-            extends Reducer<Text, Text, Text, Text>{
-
-        private String matchingFriends(String firstList, String secondList) {
-
-            if(firstList == null || secondList == null) {
-                return null;
-            }
-
-            String[] list1=firstList.split(",");
-            String[] list2=secondList.split(",");
-
-            LinkedHashSet<String> firstSet = new LinkedHashSet();
-            for(String  user: list1) {
-                firstSet.add(user);
-            }
-            /*Retaining sort order*/
-            LinkedHashSet<String> secondSet = new LinkedHashSet();
-            for(String  user: list2) {
-                secondSet.add(user);
-            }
-            firstSet.retainAll(secondSet);
-            /*Keeping only the matched friends*/
-            return firstSet.toString().replaceAll("\\[|\\]", "");
-        }
-
+            extends Reducer<Text, Text, Text, Text> {
         public void reduce(Text key, Iterable<Text> values, Context context)
-                throws IOException,InterruptedException{
+                throws IOException, InterruptedException {
+            HashMap<String, Integer> dict = new HashMap();
+            String[] ownFriends = {};
 
-            String[] friendsList = new String[2];
-            int index=0;
+            for (Text value : values) {
+                String[] friendsAndIndicator = value.toString().split("-");
+                String[] friends = friendsAndIndicator[0].split(",");
+                if (friends.length == 1 && friends[0].equals("")) continue;
+                if (friendsAndIndicator[1].equals("1")) {
+                    ownFriends = friends;
+                } else {
+                    for (String friend : friends) {
+                        dict.put(friend, dict.getOrDefault(friend, 0) + 1);
+                    }
+                }
+            }
+            dict.remove("");
+            for (String friend : ownFriends) {
+                dict.remove(friend);
+            }
+            Comparator<Map.Entry<String, Integer>> comparator = ((x, y) -> y.getValue().compareTo(x.getValue()));
+            comparator = comparator.thenComparing(x -> x.getKey());
+            String sortedFriends = dict.entrySet()
+                    .stream()
+                    .sorted(comparator)
+                    //.sorted((x, y) -> y.getValue().compareTo(x.getValue()))
+                    .limit(10)
+                    .map(Map.Entry::getKey)
+                    .collect(Collectors.joining(","));
 
-            for(Text value:values) {
-                friendsList[index++] = value.toString();
-            }
-            String mutualFriends = matchingFriends(friendsList[0],friendsList[1]);
-            if(mutualFriends != null && mutualFriends.length() != 0) {
-                context.write(key, new Text(mutualFriends));
-            }
+            context.write(key, new Text(sortedFriends));
         }
 
     }
-
-
 
 
     // Driver program
@@ -98,7 +98,7 @@ public class Top10MutualFriends {
         @SuppressWarnings("deprecation")
         Job job = new Job(conf, "mutualfriends");
         job.setJarByClass(Top10MutualFriends.class);
-        job.setMapperClass(Map.class);
+        job.setMapperClass(MapClass.class);
         job.setReducerClass(Reduce.class);
 
 
