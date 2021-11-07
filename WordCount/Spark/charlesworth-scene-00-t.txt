@@ -1,0 +1,357 @@
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/opt/spark/jars/spark-unsafe_2.12-3.1.1.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+21/11/07 21:32:24 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+21/11/07 21:32:25 INFO SparkContext: Running Spark version 3.1.1
+21/11/07 21:32:25 INFO ResourceUtils: ==============================================================
+21/11/07 21:32:25 INFO ResourceUtils: No custom resources configured for spark.driver.
+21/11/07 21:32:25 INFO ResourceUtils: ==============================================================
+21/11/07 21:32:25 INFO SparkContext: Submitted application: PySpark Word Count Exmaple
+21/11/07 21:32:25 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+21/11/07 21:32:25 INFO ResourceProfile: Limiting resource is cpu
+21/11/07 21:32:25 INFO ResourceProfileManager: Added ResourceProfile id: 0
+21/11/07 21:32:25 INFO SecurityManager: Changing view acls to: azureuser
+21/11/07 21:32:25 INFO SecurityManager: Changing modify acls to: azureuser
+21/11/07 21:32:25 INFO SecurityManager: Changing view acls groups to: 
+21/11/07 21:32:25 INFO SecurityManager: Changing modify acls groups to: 
+21/11/07 21:32:25 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(azureuser); groups with view permissions: Set(); users  with modify permissions: Set(azureuser); groups with modify permissions: Set()
+21/11/07 21:32:25 INFO Utils: Successfully started service 'sparkDriver' on port 39485.
+21/11/07 21:32:25 INFO SparkEnv: Registering MapOutputTracker
+21/11/07 21:32:25 INFO SparkEnv: Registering BlockManagerMaster
+21/11/07 21:32:25 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+21/11/07 21:32:25 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+21/11/07 21:32:25 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+21/11/07 21:32:25 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-2777e485-8be7-4522-9ef7-59efb6e52f18
+21/11/07 21:32:25 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+21/11/07 21:32:25 INFO SparkEnv: Registering OutputCommitCoordinator
+21/11/07 21:32:26 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+21/11/07 21:32:26 WARN Utils: Service 'SparkUI' could not bind on port 4041. Attempting port 4042.
+21/11/07 21:32:26 WARN Utils: Service 'SparkUI' could not bind on port 4042. Attempting port 4043.
+21/11/07 21:32:26 WARN Utils: Service 'SparkUI' could not bind on port 4043. Attempting port 4044.
+21/11/07 21:32:26 INFO Utils: Successfully started service 'SparkUI' on port 4044.
+21/11/07 21:32:26 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://vm.internal.cloudapp.net:4044
+21/11/07 21:32:26 INFO Executor: Starting executor ID driver on host vm.internal.cloudapp.net
+21/11/07 21:32:26 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 33177.
+21/11/07 21:32:26 INFO NettyBlockTransferService: Server created on vm.internal.cloudapp.net:33177
+21/11/07 21:32:26 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+21/11/07 21:32:26 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, vm.internal.cloudapp.net, 33177, None)
+21/11/07 21:32:26 INFO BlockManagerMasterEndpoint: Registering block manager vm.internal.cloudapp.net:33177 with 434.4 MiB RAM, BlockManagerId(driver, vm.internal.cloudapp.net, 33177, None)
+21/11/07 21:32:26 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, vm.internal.cloudapp.net, 33177, None)
+21/11/07 21:32:26 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, vm.internal.cloudapp.net, 33177, None)
+21/11/07 21:32:27 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 175.9 KiB, free 434.2 MiB)
+21/11/07 21:32:27 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 27.1 KiB, free 434.2 MiB)
+21/11/07 21:32:27 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on vm.internal.cloudapp.net:33177 (size: 27.1 KiB, free: 434.4 MiB)
+21/11/07 21:32:27 INFO SparkContext: Created broadcast 0 from textFile at NativeMethodAccessorImpl.java:0
+21/11/07 21:32:27 INFO FileInputFormat: Total input files to process : 1
+21/11/07 21:32:27 INFO deprecation: mapred.output.dir is deprecated. Instead, use mapreduce.output.fileoutputformat.outputdir
+21/11/07 21:32:27 INFO HadoopMapRedCommitProtocol: Using output committer class org.apache.hadoop.mapred.FileOutputCommitter
+21/11/07 21:32:27 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+21/11/07 21:32:27 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+21/11/07 21:32:27 INFO SparkContext: Starting job: runJob at SparkHadoopWriter.scala:83
+21/11/07 21:32:27 INFO DAGScheduler: Registering RDD 3 (reduceByKey at /home/azureuser/LOG8415-A2/WordCount/Spark/word_count.py:14) as input to shuffle 0
+21/11/07 21:32:27 INFO DAGScheduler: Got job 0 (runJob at SparkHadoopWriter.scala:83) with 1 output partitions
+21/11/07 21:32:27 INFO DAGScheduler: Final stage: ResultStage 1 (runJob at SparkHadoopWriter.scala:83)
+21/11/07 21:32:27 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 0)
+21/11/07 21:32:27 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 0)
+21/11/07 21:32:27 INFO DAGScheduler: Submitting ShuffleMapStage 0 (PairwiseRDD[3] at reduceByKey at /home/azureuser/LOG8415-A2/WordCount/Spark/word_count.py:14), which has no missing parents
+21/11/07 21:32:28 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 11.9 KiB, free 434.2 MiB)
+21/11/07 21:32:28 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 7.2 KiB, free 434.2 MiB)
+21/11/07 21:32:28 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on vm.internal.cloudapp.net:33177 (size: 7.2 KiB, free: 434.4 MiB)
+21/11/07 21:32:28 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1383
+21/11/07 21:32:28 INFO DAGScheduler: Submitting 1 missing tasks from ShuffleMapStage 0 (PairwiseRDD[3] at reduceByKey at /home/azureuser/LOG8415-A2/WordCount/Spark/word_count.py:14) (first 15 tasks are for partitions Vector(0))
+21/11/07 21:32:28 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+21/11/07 21:32:28 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (vm.internal.cloudapp.net, executor driver, partition 0, PROCESS_LOCAL, 4525 bytes) taskResourceAssignments Map()
+21/11/07 21:32:28 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+21/11/07 21:32:28 INFO HadoopRDD: Input split: file:/home/azureuser/LOG8415-A2/dataset/charlesworth-scene-00-t.txt:0+287764
+21/11/07 21:32:29 INFO PythonRunner: Times: total = 521, boot = 369, init = 37, finish = 115
+21/11/07 21:32:29 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1666 bytes result sent to driver
+21/11/07 21:32:29 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 975 ms on vm.internal.cloudapp.net (executor driver) (1/1)
+21/11/07 21:32:29 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+21/11/07 21:32:29 INFO PythonAccumulatorV2: Connected to AccumulatorServer at host: 127.0.0.1 port: 51575
+21/11/07 21:32:29 INFO DAGScheduler: ShuffleMapStage 0 (reduceByKey at /home/azureuser/LOG8415-A2/WordCount/Spark/word_count.py:14) finished in 1.188 s
+21/11/07 21:32:29 INFO DAGScheduler: looking for newly runnable stages
+21/11/07 21:32:29 INFO DAGScheduler: running: Set()
+21/11/07 21:32:29 INFO DAGScheduler: waiting: Set(ResultStage 1)
+21/11/07 21:32:29 INFO DAGScheduler: failed: Set()
+21/11/07 21:32:29 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[8] at saveAsTextFile at NativeMethodAccessorImpl.java:0), which has no missing parents
+21/11/07 21:32:29 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 90.7 KiB, free 434.1 MiB)
+21/11/07 21:32:29 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 33.9 KiB, free 434.1 MiB)
+21/11/07 21:32:29 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on vm.internal.cloudapp.net:33177 (size: 33.9 KiB, free: 434.3 MiB)
+21/11/07 21:32:29 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1383
+21/11/07 21:32:29 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[8] at saveAsTextFile at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+21/11/07 21:32:29 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks resource profile 0
+21/11/07 21:32:29 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (vm.internal.cloudapp.net, executor driver, partition 0, NODE_LOCAL, 4271 bytes) taskResourceAssignments Map()
+21/11/07 21:32:29 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+21/11/07 21:32:29 INFO ShuffleBlockFetcherIterator: Getting 1 (99.6 KiB) non-empty blocks including 1 (99.6 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/11/07 21:32:29 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 12 ms
+21/11/07 21:32:29 INFO HadoopMapRedCommitProtocol: Using output committer class org.apache.hadoop.mapred.FileOutputCommitter
+21/11/07 21:32:29 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+21/11/07 21:32:29 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+21/11/07 21:32:29 INFO PythonRunner: Times: total = 100, boot = -503, init = 535, finish = 68
+21/11/07 21:32:29 INFO FileOutputCommitter: Saved output of task 'attempt_202111072132276257150967768962449_0008_m_000000_0' to file:/home/azureuser/LOG8415-A2/WordCount/Spark/1/charlesworth-scene-00-t/_temporary/0/task_202111072132276257150967768962449_0008_m_000000
+21/11/07 21:32:29 INFO SparkHadoopMapRedUtil: attempt_202111072132276257150967768962449_0008_m_000000_0: Committed
+21/11/07 21:32:29 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 1952 bytes result sent to driver
+21/11/07 21:32:29 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 294 ms on vm.internal.cloudapp.net (executor driver) (1/1)
+21/11/07 21:32:29 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+21/11/07 21:32:29 INFO DAGScheduler: ResultStage 1 (runJob at SparkHadoopWriter.scala:83) finished in 0.338 s
+21/11/07 21:32:29 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+21/11/07 21:32:29 INFO TaskSchedulerImpl: Killing all running tasks in stage 1: Stage finished
+21/11/07 21:32:29 INFO DAGScheduler: Job 0 finished: runJob at SparkHadoopWriter.scala:83, took 1.625243 s
+21/11/07 21:32:29 INFO SparkHadoopWriter: Job job_202111072132276257150967768962449_0008 committed.
+21/11/07 21:32:29 INFO SparkContext: Invoking stop() from shutdown hook
+21/11/07 21:32:29 INFO SparkUI: Stopped Spark web UI at http://vm.internal.cloudapp.net:4044
+21/11/07 21:32:29 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+21/11/07 21:32:29 INFO MemoryStore: MemoryStore cleared
+21/11/07 21:32:29 INFO BlockManager: BlockManager stopped
+21/11/07 21:32:29 INFO BlockManagerMaster: BlockManagerMaster stopped
+21/11/07 21:32:29 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+21/11/07 21:32:29 INFO SparkContext: Successfully stopped SparkContext
+21/11/07 21:32:29 INFO ShutdownHookManager: Shutdown hook called
+21/11/07 21:32:29 INFO ShutdownHookManager: Deleting directory /tmp/spark-01a273a2-510f-4c07-b677-355fe028b7e9
+21/11/07 21:32:29 INFO ShutdownHookManager: Deleting directory /tmp/spark-cd109939-1859-4f0f-92c2-7474ba10c7df
+21/11/07 21:32:29 INFO ShutdownHookManager: Deleting directory /tmp/spark-01a273a2-510f-4c07-b677-355fe028b7e9/pyspark-068366d5-f6a8-4177-878f-959f86e3b91c
+
+real	0m7.323s
+user	0m16.769s
+sys	0m0.733s
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/opt/spark/jars/spark-unsafe_2.12-3.1.1.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+21/11/07 21:32:31 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+21/11/07 21:32:32 INFO SparkContext: Running Spark version 3.1.1
+21/11/07 21:32:32 INFO ResourceUtils: ==============================================================
+21/11/07 21:32:32 INFO ResourceUtils: No custom resources configured for spark.driver.
+21/11/07 21:32:32 INFO ResourceUtils: ==============================================================
+21/11/07 21:32:32 INFO SparkContext: Submitted application: PySpark Word Count Exmaple
+21/11/07 21:32:32 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+21/11/07 21:32:32 INFO ResourceProfile: Limiting resource is cpu
+21/11/07 21:32:32 INFO ResourceProfileManager: Added ResourceProfile id: 0
+21/11/07 21:32:32 INFO SecurityManager: Changing view acls to: azureuser
+21/11/07 21:32:32 INFO SecurityManager: Changing modify acls to: azureuser
+21/11/07 21:32:32 INFO SecurityManager: Changing view acls groups to: 
+21/11/07 21:32:32 INFO SecurityManager: Changing modify acls groups to: 
+21/11/07 21:32:32 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(azureuser); groups with view permissions: Set(); users  with modify permissions: Set(azureuser); groups with modify permissions: Set()
+21/11/07 21:32:32 INFO Utils: Successfully started service 'sparkDriver' on port 35231.
+21/11/07 21:32:32 INFO SparkEnv: Registering MapOutputTracker
+21/11/07 21:32:32 INFO SparkEnv: Registering BlockManagerMaster
+21/11/07 21:32:32 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+21/11/07 21:32:32 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+21/11/07 21:32:32 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+21/11/07 21:32:32 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-342b950d-2e97-469c-a22e-527348755a3f
+21/11/07 21:32:33 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+21/11/07 21:32:33 INFO SparkEnv: Registering OutputCommitCoordinator
+21/11/07 21:32:33 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+21/11/07 21:32:33 WARN Utils: Service 'SparkUI' could not bind on port 4041. Attempting port 4042.
+21/11/07 21:32:33 WARN Utils: Service 'SparkUI' could not bind on port 4042. Attempting port 4043.
+21/11/07 21:32:33 WARN Utils: Service 'SparkUI' could not bind on port 4043. Attempting port 4044.
+21/11/07 21:32:33 INFO Utils: Successfully started service 'SparkUI' on port 4044.
+21/11/07 21:32:33 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://vm.internal.cloudapp.net:4044
+21/11/07 21:32:33 INFO Executor: Starting executor ID driver on host vm.internal.cloudapp.net
+21/11/07 21:32:33 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 46277.
+21/11/07 21:32:33 INFO NettyBlockTransferService: Server created on vm.internal.cloudapp.net:46277
+21/11/07 21:32:33 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+21/11/07 21:32:33 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, vm.internal.cloudapp.net, 46277, None)
+21/11/07 21:32:33 INFO BlockManagerMasterEndpoint: Registering block manager vm.internal.cloudapp.net:46277 with 434.4 MiB RAM, BlockManagerId(driver, vm.internal.cloudapp.net, 46277, None)
+21/11/07 21:32:33 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, vm.internal.cloudapp.net, 46277, None)
+21/11/07 21:32:33 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, vm.internal.cloudapp.net, 46277, None)
+21/11/07 21:32:34 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 175.9 KiB, free 434.2 MiB)
+21/11/07 21:32:34 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 27.1 KiB, free 434.2 MiB)
+21/11/07 21:32:34 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on vm.internal.cloudapp.net:46277 (size: 27.1 KiB, free: 434.4 MiB)
+21/11/07 21:32:34 INFO SparkContext: Created broadcast 0 from textFile at NativeMethodAccessorImpl.java:0
+21/11/07 21:32:34 INFO FileInputFormat: Total input files to process : 1
+21/11/07 21:32:34 INFO deprecation: mapred.output.dir is deprecated. Instead, use mapreduce.output.fileoutputformat.outputdir
+21/11/07 21:32:34 INFO HadoopMapRedCommitProtocol: Using output committer class org.apache.hadoop.mapred.FileOutputCommitter
+21/11/07 21:32:34 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+21/11/07 21:32:34 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+21/11/07 21:32:35 INFO SparkContext: Starting job: runJob at SparkHadoopWriter.scala:83
+21/11/07 21:32:35 INFO DAGScheduler: Registering RDD 3 (reduceByKey at /home/azureuser/LOG8415-A2/WordCount/Spark/word_count.py:14) as input to shuffle 0
+21/11/07 21:32:35 INFO DAGScheduler: Got job 0 (runJob at SparkHadoopWriter.scala:83) with 1 output partitions
+21/11/07 21:32:35 INFO DAGScheduler: Final stage: ResultStage 1 (runJob at SparkHadoopWriter.scala:83)
+21/11/07 21:32:35 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 0)
+21/11/07 21:32:35 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 0)
+21/11/07 21:32:35 INFO DAGScheduler: Submitting ShuffleMapStage 0 (PairwiseRDD[3] at reduceByKey at /home/azureuser/LOG8415-A2/WordCount/Spark/word_count.py:14), which has no missing parents
+21/11/07 21:32:35 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 11.9 KiB, free 434.2 MiB)
+21/11/07 21:32:35 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 7.2 KiB, free 434.2 MiB)
+21/11/07 21:32:35 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on vm.internal.cloudapp.net:46277 (size: 7.2 KiB, free: 434.4 MiB)
+21/11/07 21:32:35 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1383
+21/11/07 21:32:35 INFO DAGScheduler: Submitting 1 missing tasks from ShuffleMapStage 0 (PairwiseRDD[3] at reduceByKey at /home/azureuser/LOG8415-A2/WordCount/Spark/word_count.py:14) (first 15 tasks are for partitions Vector(0))
+21/11/07 21:32:35 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+21/11/07 21:32:35 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (vm.internal.cloudapp.net, executor driver, partition 0, PROCESS_LOCAL, 4525 bytes) taskResourceAssignments Map()
+21/11/07 21:32:35 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+21/11/07 21:32:35 INFO HadoopRDD: Input split: file:/home/azureuser/LOG8415-A2/dataset/charlesworth-scene-00-t.txt:0+287764
+21/11/07 21:32:36 INFO PythonRunner: Times: total = 495, boot = 347, init = 39, finish = 109
+21/11/07 21:32:36 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1666 bytes result sent to driver
+21/11/07 21:32:36 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 978 ms on vm.internal.cloudapp.net (executor driver) (1/1)
+21/11/07 21:32:36 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+21/11/07 21:32:36 INFO PythonAccumulatorV2: Connected to AccumulatorServer at host: 127.0.0.1 port: 50835
+21/11/07 21:32:36 INFO DAGScheduler: ShuffleMapStage 0 (reduceByKey at /home/azureuser/LOG8415-A2/WordCount/Spark/word_count.py:14) finished in 1.160 s
+21/11/07 21:32:36 INFO DAGScheduler: looking for newly runnable stages
+21/11/07 21:32:36 INFO DAGScheduler: running: Set()
+21/11/07 21:32:36 INFO DAGScheduler: waiting: Set(ResultStage 1)
+21/11/07 21:32:36 INFO DAGScheduler: failed: Set()
+21/11/07 21:32:36 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[8] at saveAsTextFile at NativeMethodAccessorImpl.java:0), which has no missing parents
+21/11/07 21:32:36 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 90.7 KiB, free 434.1 MiB)
+21/11/07 21:32:36 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 33.9 KiB, free 434.1 MiB)
+21/11/07 21:32:36 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on vm.internal.cloudapp.net:46277 (size: 33.9 KiB, free: 434.3 MiB)
+21/11/07 21:32:36 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1383
+21/11/07 21:32:36 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[8] at saveAsTextFile at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+21/11/07 21:32:36 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks resource profile 0
+21/11/07 21:32:36 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (vm.internal.cloudapp.net, executor driver, partition 0, NODE_LOCAL, 4271 bytes) taskResourceAssignments Map()
+21/11/07 21:32:36 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+21/11/07 21:32:36 INFO ShuffleBlockFetcherIterator: Getting 1 (99.6 KiB) non-empty blocks including 1 (99.6 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/11/07 21:32:36 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 12 ms
+21/11/07 21:32:36 INFO HadoopMapRedCommitProtocol: Using output committer class org.apache.hadoop.mapred.FileOutputCommitter
+21/11/07 21:32:36 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+21/11/07 21:32:36 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+21/11/07 21:32:36 INFO PythonRunner: Times: total = 67, boot = -505, init = 518, finish = 54
+21/11/07 21:32:36 INFO FileOutputCommitter: Saved output of task 'attempt_202111072132345618260985641862769_0008_m_000000_0' to file:/home/azureuser/LOG8415-A2/WordCount/Spark/2/charlesworth-scene-00-t/_temporary/0/task_202111072132345618260985641862769_0008_m_000000
+21/11/07 21:32:36 INFO SparkHadoopMapRedUtil: attempt_202111072132345618260985641862769_0008_m_000000_0: Committed
+21/11/07 21:32:36 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 1952 bytes result sent to driver
+21/11/07 21:32:36 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 272 ms on vm.internal.cloudapp.net (executor driver) (1/1)
+21/11/07 21:32:36 INFO DAGScheduler: ResultStage 1 (runJob at SparkHadoopWriter.scala:83) finished in 0.314 s
+21/11/07 21:32:36 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+21/11/07 21:32:36 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+21/11/07 21:32:36 INFO TaskSchedulerImpl: Killing all running tasks in stage 1: Stage finished
+21/11/07 21:32:36 INFO DAGScheduler: Job 0 finished: runJob at SparkHadoopWriter.scala:83, took 1.570974 s
+21/11/07 21:32:36 INFO SparkHadoopWriter: Job job_202111072132345618260985641862769_0008 committed.
+21/11/07 21:32:36 INFO SparkContext: Invoking stop() from shutdown hook
+21/11/07 21:32:36 INFO SparkUI: Stopped Spark web UI at http://vm.internal.cloudapp.net:4044
+21/11/07 21:32:36 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+21/11/07 21:32:36 INFO MemoryStore: MemoryStore cleared
+21/11/07 21:32:36 INFO BlockManager: BlockManager stopped
+21/11/07 21:32:36 INFO BlockManagerMaster: BlockManagerMaster stopped
+21/11/07 21:32:36 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+21/11/07 21:32:36 INFO SparkContext: Successfully stopped SparkContext
+21/11/07 21:32:36 INFO ShutdownHookManager: Shutdown hook called
+21/11/07 21:32:36 INFO ShutdownHookManager: Deleting directory /tmp/spark-4e6887f0-3f34-4a38-a5c9-d78489cf6331
+21/11/07 21:32:36 INFO ShutdownHookManager: Deleting directory /tmp/spark-be153c5c-90fa-4bdc-80ea-f2e7ae498f92
+21/11/07 21:32:36 INFO ShutdownHookManager: Deleting directory /tmp/spark-be153c5c-90fa-4bdc-80ea-f2e7ae498f92/pyspark-5210c246-ffd8-4c9b-abeb-d1f3afc9919e
+
+real	0m7.034s
+user	0m16.628s
+sys	0m0.748s
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/opt/spark/jars/spark-unsafe_2.12-3.1.1.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+21/11/07 21:32:38 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+21/11/07 21:32:39 INFO SparkContext: Running Spark version 3.1.1
+21/11/07 21:32:39 INFO ResourceUtils: ==============================================================
+21/11/07 21:32:39 INFO ResourceUtils: No custom resources configured for spark.driver.
+21/11/07 21:32:39 INFO ResourceUtils: ==============================================================
+21/11/07 21:32:39 INFO SparkContext: Submitted application: PySpark Word Count Exmaple
+21/11/07 21:32:39 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+21/11/07 21:32:39 INFO ResourceProfile: Limiting resource is cpu
+21/11/07 21:32:39 INFO ResourceProfileManager: Added ResourceProfile id: 0
+21/11/07 21:32:39 INFO SecurityManager: Changing view acls to: azureuser
+21/11/07 21:32:39 INFO SecurityManager: Changing modify acls to: azureuser
+21/11/07 21:32:39 INFO SecurityManager: Changing view acls groups to: 
+21/11/07 21:32:39 INFO SecurityManager: Changing modify acls groups to: 
+21/11/07 21:32:39 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(azureuser); groups with view permissions: Set(); users  with modify permissions: Set(azureuser); groups with modify permissions: Set()
+21/11/07 21:32:39 INFO Utils: Successfully started service 'sparkDriver' on port 43821.
+21/11/07 21:32:39 INFO SparkEnv: Registering MapOutputTracker
+21/11/07 21:32:40 INFO SparkEnv: Registering BlockManagerMaster
+21/11/07 21:32:40 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+21/11/07 21:32:40 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+21/11/07 21:32:40 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+21/11/07 21:32:40 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-eb5002c2-8f72-4804-b52c-4252fda5d224
+21/11/07 21:32:40 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+21/11/07 21:32:40 INFO SparkEnv: Registering OutputCommitCoordinator
+21/11/07 21:32:40 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+21/11/07 21:32:40 WARN Utils: Service 'SparkUI' could not bind on port 4041. Attempting port 4042.
+21/11/07 21:32:40 WARN Utils: Service 'SparkUI' could not bind on port 4042. Attempting port 4043.
+21/11/07 21:32:40 WARN Utils: Service 'SparkUI' could not bind on port 4043. Attempting port 4044.
+21/11/07 21:32:40 INFO Utils: Successfully started service 'SparkUI' on port 4044.
+21/11/07 21:32:40 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://vm.internal.cloudapp.net:4044
+21/11/07 21:32:40 INFO Executor: Starting executor ID driver on host vm.internal.cloudapp.net
+21/11/07 21:32:40 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 34157.
+21/11/07 21:32:40 INFO NettyBlockTransferService: Server created on vm.internal.cloudapp.net:34157
+21/11/07 21:32:40 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+21/11/07 21:32:40 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, vm.internal.cloudapp.net, 34157, None)
+21/11/07 21:32:40 INFO BlockManagerMasterEndpoint: Registering block manager vm.internal.cloudapp.net:34157 with 434.4 MiB RAM, BlockManagerId(driver, vm.internal.cloudapp.net, 34157, None)
+21/11/07 21:32:40 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, vm.internal.cloudapp.net, 34157, None)
+21/11/07 21:32:40 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, vm.internal.cloudapp.net, 34157, None)
+21/11/07 21:32:41 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 175.9 KiB, free 434.2 MiB)
+21/11/07 21:32:41 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 27.1 KiB, free 434.2 MiB)
+21/11/07 21:32:41 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on vm.internal.cloudapp.net:34157 (size: 27.1 KiB, free: 434.4 MiB)
+21/11/07 21:32:41 INFO SparkContext: Created broadcast 0 from textFile at NativeMethodAccessorImpl.java:0
+21/11/07 21:32:41 INFO FileInputFormat: Total input files to process : 1
+21/11/07 21:32:42 INFO deprecation: mapred.output.dir is deprecated. Instead, use mapreduce.output.fileoutputformat.outputdir
+21/11/07 21:32:42 INFO HadoopMapRedCommitProtocol: Using output committer class org.apache.hadoop.mapred.FileOutputCommitter
+21/11/07 21:32:42 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+21/11/07 21:32:42 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+21/11/07 21:32:42 INFO SparkContext: Starting job: runJob at SparkHadoopWriter.scala:83
+21/11/07 21:32:42 INFO DAGScheduler: Registering RDD 3 (reduceByKey at /home/azureuser/LOG8415-A2/WordCount/Spark/word_count.py:14) as input to shuffle 0
+21/11/07 21:32:42 INFO DAGScheduler: Got job 0 (runJob at SparkHadoopWriter.scala:83) with 1 output partitions
+21/11/07 21:32:42 INFO DAGScheduler: Final stage: ResultStage 1 (runJob at SparkHadoopWriter.scala:83)
+21/11/07 21:32:42 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 0)
+21/11/07 21:32:42 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 0)
+21/11/07 21:32:42 INFO DAGScheduler: Submitting ShuffleMapStage 0 (PairwiseRDD[3] at reduceByKey at /home/azureuser/LOG8415-A2/WordCount/Spark/word_count.py:14), which has no missing parents
+21/11/07 21:32:42 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 11.9 KiB, free 434.2 MiB)
+21/11/07 21:32:42 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 7.2 KiB, free 434.2 MiB)
+21/11/07 21:32:42 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on vm.internal.cloudapp.net:34157 (size: 7.2 KiB, free: 434.4 MiB)
+21/11/07 21:32:42 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1383
+21/11/07 21:32:42 INFO DAGScheduler: Submitting 1 missing tasks from ShuffleMapStage 0 (PairwiseRDD[3] at reduceByKey at /home/azureuser/LOG8415-A2/WordCount/Spark/word_count.py:14) (first 15 tasks are for partitions Vector(0))
+21/11/07 21:32:42 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+21/11/07 21:32:42 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (vm.internal.cloudapp.net, executor driver, partition 0, PROCESS_LOCAL, 4525 bytes) taskResourceAssignments Map()
+21/11/07 21:32:42 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+21/11/07 21:32:42 INFO HadoopRDD: Input split: file:/home/azureuser/LOG8415-A2/dataset/charlesworth-scene-00-t.txt:0+287764
+21/11/07 21:32:43 INFO PythonRunner: Times: total = 588, boot = 430, init = 36, finish = 122
+21/11/07 21:32:43 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1623 bytes result sent to driver
+21/11/07 21:32:43 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 1075 ms on vm.internal.cloudapp.net (executor driver) (1/1)
+21/11/07 21:32:43 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+21/11/07 21:32:43 INFO PythonAccumulatorV2: Connected to AccumulatorServer at host: 127.0.0.1 port: 35899
+21/11/07 21:32:43 INFO DAGScheduler: ShuffleMapStage 0 (reduceByKey at /home/azureuser/LOG8415-A2/WordCount/Spark/word_count.py:14) finished in 1.277 s
+21/11/07 21:32:43 INFO DAGScheduler: looking for newly runnable stages
+21/11/07 21:32:43 INFO DAGScheduler: running: Set()
+21/11/07 21:32:43 INFO DAGScheduler: waiting: Set(ResultStage 1)
+21/11/07 21:32:43 INFO DAGScheduler: failed: Set()
+21/11/07 21:32:43 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[8] at saveAsTextFile at NativeMethodAccessorImpl.java:0), which has no missing parents
+21/11/07 21:32:43 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 90.7 KiB, free 434.1 MiB)
+21/11/07 21:32:43 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 33.9 KiB, free 434.1 MiB)
+21/11/07 21:32:43 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on vm.internal.cloudapp.net:34157 (size: 33.9 KiB, free: 434.3 MiB)
+21/11/07 21:32:43 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1383
+21/11/07 21:32:43 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[8] at saveAsTextFile at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+21/11/07 21:32:43 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks resource profile 0
+21/11/07 21:32:43 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (vm.internal.cloudapp.net, executor driver, partition 0, NODE_LOCAL, 4271 bytes) taskResourceAssignments Map()
+21/11/07 21:32:43 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+21/11/07 21:32:43 INFO ShuffleBlockFetcherIterator: Getting 1 (99.6 KiB) non-empty blocks including 1 (99.6 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/11/07 21:32:43 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 14 ms
+21/11/07 21:32:43 INFO HadoopMapRedCommitProtocol: Using output committer class org.apache.hadoop.mapred.FileOutputCommitter
+21/11/07 21:32:43 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+21/11/07 21:32:43 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+21/11/07 21:32:43 INFO PythonRunner: Times: total = 78, boot = -538, init = 560, finish = 56
+21/11/07 21:32:43 INFO FileOutputCommitter: Saved output of task 'attempt_202111072132416845199852921461446_0008_m_000000_0' to file:/home/azureuser/LOG8415-A2/WordCount/Spark/3/charlesworth-scene-00-t/_temporary/0/task_202111072132416845199852921461446_0008_m_000000
+21/11/07 21:32:43 INFO SparkHadoopMapRedUtil: attempt_202111072132416845199852921461446_0008_m_000000_0: Committed
+21/11/07 21:32:43 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 1952 bytes result sent to driver
+21/11/07 21:32:43 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 288 ms on vm.internal.cloudapp.net (executor driver) (1/1)
+21/11/07 21:32:43 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+21/11/07 21:32:43 INFO DAGScheduler: ResultStage 1 (runJob at SparkHadoopWriter.scala:83) finished in 0.326 s
+21/11/07 21:32:43 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+21/11/07 21:32:43 INFO TaskSchedulerImpl: Killing all running tasks in stage 1: Stage finished
+21/11/07 21:32:43 INFO DAGScheduler: Job 0 finished: runJob at SparkHadoopWriter.scala:83, took 1.703288 s
+21/11/07 21:32:43 INFO SparkHadoopWriter: Job job_202111072132416845199852921461446_0008 committed.
+21/11/07 21:32:43 INFO SparkContext: Invoking stop() from shutdown hook
+21/11/07 21:32:43 INFO SparkUI: Stopped Spark web UI at http://vm.internal.cloudapp.net:4044
+21/11/07 21:32:43 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+21/11/07 21:32:43 INFO MemoryStore: MemoryStore cleared
+21/11/07 21:32:43 INFO BlockManager: BlockManager stopped
+21/11/07 21:32:43 INFO BlockManagerMaster: BlockManagerMaster stopped
+21/11/07 21:32:43 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+21/11/07 21:32:43 INFO SparkContext: Successfully stopped SparkContext
+21/11/07 21:32:43 INFO ShutdownHookManager: Shutdown hook called
+21/11/07 21:32:43 INFO ShutdownHookManager: Deleting directory /tmp/spark-fdfb8f41-e857-42f2-bc8b-c559edf27c06
+21/11/07 21:32:43 INFO ShutdownHookManager: Deleting directory /tmp/spark-99b94e17-265f-496d-a49c-05e866957a36/pyspark-675ef83e-1879-487f-b240-e0763adcf16f
+21/11/07 21:32:43 INFO ShutdownHookManager: Deleting directory /tmp/spark-99b94e17-265f-496d-a49c-05e866957a36
+
+real	0m7.166s
+user	0m16.911s
+sys	0m0.783s
