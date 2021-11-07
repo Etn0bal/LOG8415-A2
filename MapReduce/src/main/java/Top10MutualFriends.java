@@ -73,7 +73,6 @@ public class Top10MutualFriends {
             String sortedFriends = dict.entrySet()
                     .stream()
                     .sorted(comparator)
-                    //.sorted((x, y) -> y.getValue().compareTo(x.getValue()))
                     .limit(10)
                     .map(Map.Entry::getKey)
                     .collect(Collectors.joining(","));
