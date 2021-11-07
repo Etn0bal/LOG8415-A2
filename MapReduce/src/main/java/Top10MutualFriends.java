@@ -26,6 +26,8 @@ public class Top10MutualFriends {
             // split[0] is user and split[1] is friend list
             String userId = split[0];
             user.set(userId);
+            
+            // Emit the user with its own friend list
             if (split.length == 1) {
                 friends.set("-1");
                 context.write(user, friends);
@@ -36,6 +38,8 @@ public class Top10MutualFriends {
             }
 
             String[] friendIds = split[1].split(",");
+            
+            // Emit potential mutual friend for each friends
             for (String friend : friendIds) {
                 String commonFriends = Arrays.stream(friendIds).filter(f -> !f.equals(friend)).collect(Collectors.joining(","));
                 friends.set(commonFriends + "-0");
@@ -52,6 +56,7 @@ public class Top10MutualFriends {
             HashMap<String, Integer> dict = new HashMap();
             String[] ownFriends = {};
 
+            // Populate a dictionnary with a userId as the key and a value representing the number of mutual friend they have with them
             for (Text value : values) {
                 String[] friendsAndIndicator = value.toString().split("-");
                 String[] friends = friendsAndIndicator[0].split(",");
@@ -64,10 +69,14 @@ public class Top10MutualFriends {
                     }
                 }
             }
+            
+            // Remove their own friend from the dictionnary
             dict.remove("");
             for (String friend : ownFriends) {
                 dict.remove(friend);
             }
+            
+            // Sort the dictionnary and get the 10 users with the most number of mutual friends with them
             Comparator<Map.Entry<String, Integer>> comparator = ((x, y) -> y.getValue().compareTo(x.getValue()));
             comparator = comparator.thenComparing(x -> x.getKey());
             String sortedFriends = dict.entrySet()
