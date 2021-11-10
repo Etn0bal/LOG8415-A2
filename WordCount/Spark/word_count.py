@@ -14,4 +14,5 @@ if __name__ == "__main__":
 	wordCounts = words.map(lambda word: (word, 1)).reduceByKey(lambda a,b:a +b)
 	
 	# save the counts to output
-	wordCounts.saveAsTextFile(sys.argv[2])
+	if len(sys.argv) > 2:
+		wordCounts.saveAsTextFile(sys.argv[2])
