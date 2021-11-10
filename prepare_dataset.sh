@@ -1,0 +1,1 @@
+hdfs dfs -copyFromLocal ./dataset input/dataset
