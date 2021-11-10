@@ -1,5 +1,6 @@
 #!/bin/bash
 
+rm -r results
 mkdir -p results
 
 jar_file=$HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.1.jar

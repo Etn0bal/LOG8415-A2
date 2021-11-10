@@ -1,5 +1,6 @@
 #!/bin/bash
 
+rm -r results
 mkdir -p results
 
 bash_file=./word_count.py
