@@ -10,4 +10,4 @@ with open(dir_name + "/" + file_name, "r") as f:
     
 with open(dir_name + "/" + "results.csv", "a") as f:
     for res in ungroup:
-        f.write(f"{file_name},{res}")
+        f.write(f"{file_name},{res}\n")
