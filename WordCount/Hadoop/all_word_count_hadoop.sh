@@ -2,7 +2,7 @@
 
 mkdir -p results
 
-jar_file=/home/azureuser/hadoop-3.3.1/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.1.jar
+jar_file=$HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.1.jar
 
 for filename in ../../dataset/*.txt; do
     base_filename=$(basename $filename)
