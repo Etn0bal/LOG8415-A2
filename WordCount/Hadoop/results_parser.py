@@ -4,7 +4,7 @@ import sys
 dir_name = sys.argv[1]
 file_name = sys.argv[2]
 
-with open(file_name, "r") as f:
+with open(dir_name + "/" + file_name, "r") as f:
     regex = re.compile(r"(?<=user\t)(.*?)(?=\n)")
     ungroup = regex.findall(f.read())
     
