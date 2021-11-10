@@ -13,5 +13,5 @@ for filename in ../../dataset/*.txt; do
     { time hadoop jar $jar_file wordcount input/dataset/$base_filename output/1/$(basename $filename .txt) ; } 2>> ./results/$base_filename
     { time hadoop jar $jar_file wordcount input/dataset/$base_filename output/2/$(basename $filename .txt) ; } 2>> ./results/$base_filename
     { time hadoop jar $jar_file wordcount input/dataset/$base_filename output/3/$(basename $filename .txt) ; } 2>> ./results/$base_filename
-    python3 ./results_parser.py ./results $base_filename
+    python3 ../../utils/results_parser.py ./results $base_filename
 done

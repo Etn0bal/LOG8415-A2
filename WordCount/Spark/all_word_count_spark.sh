@@ -11,5 +11,5 @@ for filename in ../../dataset/*.txt; do
     { time spark-submit $py_file $filename ; } 2>> ./results/$base_filename
     { time spark-submit $py_file $filename ; } 2>> ./results/$base_filename
     { time spark-submit $py_file $filename ; } 2>> ./results/$base_filename
-    python ./results_parser.py ./results $base_filename
+    python3 ../../utils/results_parser.py ./results $base_filename
 done
